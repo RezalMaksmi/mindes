@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import "../../src/index.css";
+import TitleLandingPage from "../components/atoms/TitleLandingPage";
 
 const Home = () => {
- 
-
-
   return (
-    <div className="w-full">
-      
-  
+    <div class="">
+      <TitleLandingPage />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
