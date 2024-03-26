@@ -1,0 +1,15 @@
+import React, { useState, useEffect } from "react";
+
+const Home = () => {
+ 
+
+
+  return (
+    <div className="w-full">
+      
+  
+    </div>
+  )
+}
+
+export default Home
