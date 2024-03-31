@@ -7,6 +7,7 @@ import PengajuanAdmin from "./PengajuanAdmin";
 import AduanUser from "./AduanUser";
 import AduanAdmin from "./AduanAdmin";
 import HomeAdmin from "./HomeAdmin";
+import CardTable from "./CardTable";
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   HomeAdmin,
   PengajuanAdmin,
   AduanAdmin,
+  CardTable,
 };
