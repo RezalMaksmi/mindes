@@ -21,7 +21,8 @@ const NavbarDashboard = () => {
     
     const handleLogout = () => {
       localStorage.removeItem("userData");
-      navigate("/login")
+      navigate("/")
+      window.location.reload(false);
     };
   
     console.log(role)
@@ -95,7 +96,7 @@ const NavbarDashboard = () => {
             </div>
           </div>
     ) : (
-        <div className={`px-3  left-0 top-0 bottom-0  w-20  bg-[#E3F1FF] transition-all z-20 fixed ${active ? `w-[180px]` : ``}`} >
+        <div className={`px-3  left-0 top-0 bottom-0  w-20  bg-[#E3F1FF] transition-all z-20 fixed ${active ? `w-[220px]` : ``}`} >
             <div className="text-[#1283B6] text-2xl h-[80px] rounded-sm w-full flex justify-center items-center" onClick={() => setActive(!active)}>
               {active ? <LuX />  : <LuAlignRight />}
             </div>
@@ -113,7 +114,7 @@ const NavbarDashboard = () => {
                     </div>
                 </Link>
 
-                <Link to={"data"} className={`${pathname === "/data" ? "bg-[#1283B6] text-[#fff] rounded-lg" : "" } w-full py-2 flex justify-start items-center flex-row gap-4 overflow-hidden ${isShowData ? `overflow-visible w-max text-white bg-[#1283B6] rounded-lg pr-5 ` : `overflow-hidden`}`}
+                <Link to={"data"} className={`${pathname === "/data" ? "bg-[#1283B6] text-[#fff] rounded-lg" : "" } w-full h-[55px] flex justify-start items-center flex-row gap-4 overflow-hidden ${isShowData ? `py-[11px] overflow-visible w-max text-white bg-[#1283B6] rounded-lg pr-5 ` : `overflow-hidden`}`}
                 onMouseEnter={() => setIsShowData(true)}
                 onMouseLeave={() => setIsShowData(false)}
                 >
@@ -125,7 +126,7 @@ const NavbarDashboard = () => {
                     </div>
                 </Link>
                 
-                <Link to={"ajuan"} className={`${pathname === "/ajuan" ? "bg-[#1283B6] text-[#fff] rounded-lg" : "" } w-full py-2 flex justify-start items-center flex-row gap-4 overflow-hidden ${isShowAjuan ? `overflow-visible w-max text-white bg-[#1283B6] rounded-lg pr-5 ` : `overflow-hidden`}`}
+                <Link to={"ajuan"} className={`${pathname === "/ajuan" ? "bg-[#1283B6] text-[#fff] rounded-lg" : "" } w-full h-[55px] flex justify-start items-center flex-row gap-4 overflow-hidden ${isShowAjuan ? `py-[11px] overflow-visible w-max text-white bg-[#1283B6] rounded-lg pr-5 ` : `overflow-hidden`}`}
                 onMouseEnter={() => setIsShowAjuan(true)}
                 onMouseLeave={() => setIsShowAjuan(false)}
                 >
@@ -137,7 +138,7 @@ const NavbarDashboard = () => {
                     </span>
                 </Link>
 
-                <Link to={"arsip"} className={`${pathname === "/arsip" ? "bg-[#1283B6] text-[#fff] rounded-lg" : "" } w-full py-2 flex justify-start items-center flex-row gap-4 overflow-hidden ${isShowArsip ? `overflow-visible w-max text-white bg-[#1283B6] rounded-lg pr-5 ` : `overflow-hidden`}`}
+                <Link to={"arsip"} className={`${pathname === "/arsip" ? "bg-[#1283B6] text-[#fff] rounded-lg" : "" } w-full h-[55px] flex justify-start items-center flex-row gap-4 overflow-hidden ${isShowArsip ? `py-[11px] overflow-visible w-max text-white bg-[#1283B6] rounded-lg pr-5 ` : `overflow-hidden`}`}
                 onMouseEnter={() => setIsShowArsip(true)}
                 onMouseLeave={() => setIsShowArsip(false)}
                 >
@@ -150,7 +151,7 @@ const NavbarDashboard = () => {
                 </Link>
 
 
-                <Link to={"news"} className={`${pathname === "/news" ? "bg-[#1283B6] text-[#fff] rounded-lg" : "" } w-full py-2 flex justify-start items-center flex-row gap-4 overflow-hidden ${isShowNews ? `overflow-visible w-max text-white bg-[#1283B6] rounded-lg pr-5 ` : `overflow-hidden`}`}
+                <Link to={"news"} className={`${pathname === "/news" ? "bg-[#1283B6] text-[#fff] rounded-lg" : "" } w-full h-[55px] flex justify-start items-center flex-row gap-4 overflow-hidden ${isShowNews ? `py-[11px] overflow-visible w-max text-white bg-[#1283B6] rounded-lg pr-5 ` : `overflow-hidden`}`}
                 onMouseEnter={() => setIsShowNews(true)}
                 onMouseLeave={() => setIsShowNews(false)}
                 >
@@ -162,7 +163,7 @@ const NavbarDashboard = () => {
                     </span>
                 </Link>
 
-                <Link to={"aduan"} className={`${pathname === "/aduan" ? "bg-[#1283B6] text-[#fff] rounded-lg" : "" } w-full py-2 flex justify-start items-center flex-row gap-4 overflow-hidden ${isShowAduan ? `overflow-visible w-max text-white bg-[#1283B6] rounded-lg pr-5 ` : `overflow-hidden`}`}
+                <Link to={"aduan"} className={`${pathname === "/aduan" ? "bg-[#1283B6] text-[#fff] rounded-lg" : "" } w-full h-[55px] flex justify-start items-center flex-row gap-4 overflow-hidden ${isShowAduan ? `overflow-visible w-max text-white bg-[#1283B6] rounded-lg pr-5 ` : `overflow-hidden`}`}
                 onMouseEnter={() => setIsShowAduan(true)}
                 onMouseLeave={() => setIsShowAduan(false)}
                 >

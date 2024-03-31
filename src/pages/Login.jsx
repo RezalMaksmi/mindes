@@ -27,6 +27,7 @@ const Login = () => {
             const userData = { token, name, role, email };
           localStorage.setItem("userData", JSON.stringify(userData));
           navigate(token ? "/dashboard" : "/login");
+          window.location.reload(false);
         }if (admin) {
             // Autentikasi berhasil
             setError('');
@@ -37,6 +38,7 @@ const Login = () => {
               const userData = { token, name, role, email };
             localStorage.setItem("userData", JSON.stringify(userData));
             navigate(token ? "/dashboard" : "/login");
+            window.location.reload(false);
           } else {
           // Autentikasi gagal
           setError('Username atau password salah');

@@ -1,25 +1,32 @@
 import React from 'react'
 import { Button } from '../atoms'
-import { BiCheckSquare,  BiShow } from 'react-icons/bi'
+import { BiCheckCircle, BiCheckShield, BiCheckSquare,  BiEdit,  BiShow } from 'react-icons/bi'
 import { LuDelete } from 'react-icons/lu'
 
 const CardTable = (props) => {
-    const {NoReg, Role, Name, JenisPeserta, Gender,Instansi,Nilai, ActShow, ActActiveTest, ActDelete} = props
+    const {No, NomorSurat, NamaPemohon, JenisSurat, Tanggal, ActShow, ActEdit, ActDelete, type} = props
   return (
+    
     <tr className='border border-[#929292] '>
-    <td className='border py-3 border-[#929292] px-2'>{NoReg}</td>
-    <td className='border border-[#929292] px-2'>{Role}</td>
-    <td className='border border-[#929292] px-2'>{Name}</td>
-    <td className='border border-[#929292] px-2'>{JenisPeserta}</td>
-    <td className='border border-[#929292] px-2'>{Gender}</td>
-    <td className='border border-[#929292] px-2'>{Instansi}</td>
-    <td className='border border-[#929292] px-2'>{Nilai}</td>
-    <td className='flex md:flex-row gap-2 w-fit flex-col text-center mx-auto my-2'>
-      <Button type="ButtonIconCS"  className="bg-[#58b4ad] items-center text-white " onClick={ActActiveTest} icon={<BiCheckSquare />} />
-      <Button type="ButtonIconCS" className="bg-[#4BABD6] items-center text-white " onClick={ActShow} icon={<BiShow />} />
-      <Button type="ButtonIconCS" className="bg-[#FF4E4E] items-center text-white " onClick={ActDelete} icon={<LuDelete />} />
-    </td>
-  </tr> 
+      <td className='border py-3 border-[#929292] px-2'>{No}</td>
+      <td className='border border-[#929292] px-2'>{NomorSurat}</td>
+      <td className='border border-[#929292] px-2'>{NamaPemohon}</td>
+      <td className='border border-[#929292] px-2'>{JenisSurat}</td>
+      <td className='border border-[#929292] px-2'>{Tanggal}</td>
+        {
+          type === "ajuan" ? (
+            <td className='flex md:flex-row gap-2 w-fit flex-col text-center mx-auto my-2'>
+              <Button type="ButtonTextIcon" className="bg-[#58b4ad] items-center text-white " onClick={ActShow} icon={<BiCheckCircle />} text="Proses" />
+            </td>
+          ):(
+            <td className='flex md:flex-row gap-2 w-fit flex-col text-center mx-auto my-2'>
+              <Button type="IconButton"  className="bg-[#58b4ad] items-center text-white " onClick={ActEdit} icon={<BiEdit />} />
+              <Button type="IconButton" className="bg-[#4BABD6] items-center text-white " onClick={ActShow} icon={<BiShow />} />
+              <Button type="IconButton" className="bg-[#FF4E4E] items-center text-white " onClick={ActDelete} icon={<LuDelete />} />
+            </td>
+          )
+        }
+    </tr> 
   )
 }
 
