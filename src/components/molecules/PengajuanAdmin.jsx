@@ -1,9 +1,12 @@
 import React, {useState} from 'react'
-import { Button, CardTable, Input, ShowCard } from '../../components';
+// import { Button, CardTable, Input, ShowCard } from '../../components';
 import { BiSearch} from "react-icons/bi";
 import { Data } from "../../data";
 import ReactPaginate from 'react-paginate';
 import { LuCheckCircle, LuClock10, LuLoader2 } from 'react-icons/lu';
+import { Button, Input } from '../atoms';
+import CardTable from './CardTable';
+
 
 const DashboardPengajuanAdmin = () => {
 

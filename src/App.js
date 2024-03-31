@@ -9,8 +9,9 @@ import {
   Arsip,
   DataPenduduk,
 } from "./pages";
-import { Navbar } from "./components/index";
+
 import News from "./pages/News";
+import { Navbar } from "./components";
 
 function App() {
   const getUserDataFromLocalStorage = () => {

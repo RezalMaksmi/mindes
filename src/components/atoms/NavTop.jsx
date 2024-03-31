@@ -10,7 +10,6 @@ const NavTop = () => {
   };
   const { email, name } = getUserDataFromLocalStorage();
 
-  console.log(email)
   return (
     <div className="w-full py-3 h-[70px] bg-white flex justify-between items-center lg:px-[100px] pl-[100px] pr-[20px] border shadow">
           <Images type="logo" className="bg-pink lg:h-full h-[50%] " />

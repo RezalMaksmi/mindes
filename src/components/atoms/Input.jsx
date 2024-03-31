@@ -38,6 +38,31 @@ const Input = (props) => {
           />
         </div>
       );
+
+    case "InputMessage":
+      return (
+        <div className="relative">
+          <textarea
+            type={type}
+            className="w-[300px] md:w-[500px] h-[30vh] p-3 bg-white rounded-md border border-gray-300 placeholder-gray-400 text-darkgray focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder={placeholder}
+            onChange={onChange}
+            value={value}
+            name={name}
+            style={{ resize: "none" }}
+          />
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <svg
+              className="h-8 w-8 text-gray-700"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              viewBox="0 0 24 24"
+              stroke="currentColor"></svg>
+          </div>
+        </div>
+      );
+
     default:
       return (
         <input
