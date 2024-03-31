@@ -6,7 +6,7 @@ const Features = () => {
   return (
     <section className="h-full ">
       <div>
-        <Text className="mx-auto" type="title" text="Fitur MINDES" />
+        <Text className="mx-auto" type="subtitle" text="Fitur MINDES" />
         <CardFeatures />
       </div>
     </section>

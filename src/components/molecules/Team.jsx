@@ -41,8 +41,8 @@ const dataProfile = [
 
 const Team = () => {
   return (
-    <section className="h-full flex flex-col justify-center ">
-      <Text  type="title" text="Team" />
+    <section className="h-full mb-10 flex flex-col justify-center ">
+      <Text  type="subtitle" text="Team" />
 
       <div className="container items-center mx-auto">
         <Swiper

@@ -5,6 +5,7 @@ import { About, Benefit, Features } from "../components/molecules";
 import { Text } from "../components/atoms";
 import Team from "../components/molecules/Team";
 import Artikel from "../components/molecules/Artikel";
+import Contact from "../components/molecules/Contact";
 
 const Home = () => {
   return (
@@ -25,6 +26,7 @@ const Home = () => {
       <Benefit />
       <Team />
       <Artikel />
+      <Contact/>
     </section>
   );
 };
