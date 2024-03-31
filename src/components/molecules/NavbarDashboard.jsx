@@ -45,7 +45,7 @@ const NavbarDashboard = () => {
             </div>
             <div className="flex flex-col justify-between h-[85%] text-[#1283B6]  ">
               <div className="flex flex-col gap-3 ">
-              <Link to={"dashboard"} className={`${pathname === "/dashboard" ? "bg-[#1283B6] text-[#fff] rounded-lg" : "" } w-full py-2 flex justify-start items-center flex-row gap-4 overflow-hidden ${isHome ? `overflow-visible w-max text-white bg-[#1283B6] rounded-lg pr-5 ` : `overflow-hidden`}`}
+              <Link to={"dashboard"} className={`${pathname === "/" ? "bg-[#1283B6] text-[#fff] rounded-lg" : "" } w-full py-2 flex justify-start items-center flex-row gap-4 overflow-hidden ${isHome ? `overflow-visible w-max text-white bg-[#1283B6] rounded-lg pr-5 ` : `overflow-hidden`}`}
                 onMouseEnter={() => setIsHome(true)}
                 onMouseLeave={() => setIsHome(false)}
                 >
@@ -102,7 +102,7 @@ const NavbarDashboard = () => {
             </div>
             <div className="flex flex-col justify-between h-[85%] text-[#1283B6]  ">
               <div className="flex flex-col gap-3 ">
-              <Link to={"dashboard"} className={`${pathname === "/dashboard" ? "bg-[#1283B6] text-[#fff] rounded-lg" : "" } w-full py-2 flex justify-start items-center flex-row gap-4 overflow-hidden ${isHome ? `overflow-visible w-max text-white bg-[#1283B6] rounded-lg pr-5 ` : `overflow-hidden`}`}
+              <Link to={"dashboard"} className={`${pathname === "/" ? "bg-[#1283B6] text-[#fff] rounded-lg" : "" } w-full py-2 flex justify-start items-center flex-row gap-4 overflow-hidden ${isHome ? `overflow-visible w-max text-white bg-[#1283B6] rounded-lg pr-5 ` : `overflow-hidden`}`}
                 onMouseEnter={() => setIsHome(true)}
                 onMouseLeave={() => setIsHome(false)}
                 >

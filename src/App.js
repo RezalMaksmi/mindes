@@ -26,7 +26,7 @@ function App() {
 
       {token ? (
         <Routes>
-          <Route path="/dashboard" element={<DashboardUser />} />
+          <Route path="/" element={<DashboardUser />} />
           <Route path="/ajuan" element={<Pengajuan />} />
           <Route path="/aduan" element={<Pengaduan />} />
           <Route path="/arsip" element={<Arsip />} />
