@@ -2,16 +2,48 @@
 import React from "react";
 import logo from "../../assets/Logo_Mindes.png";
 import { Link, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import { LuAlignRight } from "react-icons/lu";
 import { LuX } from "react-icons/lu";
+import NavbarDashboard from "./NavbarDashboard";
+import NavTop from "../atoms/NavTop";
 
 const Navbar = () => {
   const [active, setActive] = React.useState(false);
   const location = useLocation();
   const { pathname } = location;
+  const navigate = useNavigate();
 
+
+  const loginUser = () => {
+  // setTimeout(() => {
+  //   const token = "akmsdnfydtaja3kjeq8d9";
+  //   const role = "admin";
+  //   const userData = { token, role };
+  //   localStorage.setItem("userData", JSON.stringify(userData));
+    navigate("/login");
+  // }, 2000);
+}
+
+  const getUserDataFromLocalStorage = () => {
+    const user = localStorage.getItem("userData"); 
+    return user ? JSON.parse(user) : {};
+  };
+  const { token, role } = getUserDataFromLocalStorage();
+  
   return (
-    <div className="  px-5 fixed top-5 w-full flex justify-center ">
+<>
+    {
+    role && token ? (
+      <>
+        <div className="w-full">
+          <NavTop />
+        </div>
+        <NavbarDashboard />
+      </>
+    ) : (
+      <div className="  px-5 fixed top-5 w-full flex justify-center ">
       <section className="container rounded-full bg-white shadow border w-full z-30">
         <div className="  w-full h-full mx-auto px-10 lg:px-24 py-2 lg:py-3 flex justify-between relative items-center ">
           <div className="h-9 my-2">
@@ -67,14 +99,17 @@ const Navbar = () => {
                 Kontak
               </Link>
             </li>
-            <button
+            <Link 
+              to="login"
               className={
                 pathname === "/user-login"
                   ? "boderr-active"
                   : "bg-orange-500 text-white px-4 py-1 rounded-full hover:scale-105 transition-all w-[75px] text-center"
-              }>
+              }
+              onClick={loginUser}
+              >
               Login
-            </button>
+            </Link>
           </ul>
 
           <div
@@ -85,6 +120,9 @@ const Navbar = () => {
         </div>
       </section>
     </div>
+    )
+    }
+    </>
   );
 };
 

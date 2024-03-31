@@ -1,0 +1,16 @@
+[
+  {
+    "email":"rezal@gmail.com", 
+    "username": "rezal nur syaifudin",
+    "password": "rezal123",
+    "role": "admin", 
+    "token" : "akmsdnfydtaja3kjeq8d9"
+  },
+  {
+    "email":"kiki@gmail.com", 
+    "username": "kiki",
+    "password": "kiki123",
+    "role": "user", 
+    "token" : "akmsgfgfhghghgjhjhjkkj"
+  }
+]
