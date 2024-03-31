@@ -7,7 +7,7 @@ const DashboardUser = () => {
     return user ? JSON.parse(user) : {};
   };
   const { token, role } = getUserDataFromLocalStorage();
-
+  // window.location.reload(false);
 
 
   return (

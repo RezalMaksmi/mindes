@@ -16,7 +16,10 @@ const Button = (props) => {
         </a>
       );
     case "IconButton":
-      return <button onClick={onClick}>{icon}</button>;
+      return <button onClick={onClick} className={`px-2 py-2 rounded-lg flex gap-2  ${className}`}>{icon}</button>;
+
+      case "ButtonTextIcon":
+        return <button onClick={onClick} className={`px-3 py-1 rounded-lg flex gap-2  ${className}`}>{icon}{text}</button>;
     default:
       return (
         <a

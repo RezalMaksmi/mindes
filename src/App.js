@@ -7,8 +7,10 @@ import {
   Pengaduan,
   Pengajuan,
   Arsip,
+  DataPenduduk,
 } from "./pages";
 import { Navbar } from "./components/index";
+import News from "./pages/News";
 
 function App() {
   const getUserDataFromLocalStorage = () => {
@@ -27,6 +29,8 @@ function App() {
           <Route path="/ajuan" element={<Pengajuan />} />
           <Route path="/aduan" element={<Pengaduan />} />
           <Route path="/arsip" element={<Arsip />} />
+          <Route path="/data" element={<DataPenduduk />} />
+          <Route path="/news" element={<News />} />
         </Routes>
       ) : (
         <Routes>

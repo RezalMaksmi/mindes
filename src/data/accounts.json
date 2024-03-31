@@ -1,16 +1,17 @@
 [
   {
+    "kode" : "rezal0304",
     "email":"rezal@gmail.com", 
     "username": "rezal nur syaifudin",
     "password": "rezal123",
-    "role": "admin", 
+    "role": "user", 
     "token" : "akmsdnfydtaja3kjeq8d9"
   },
   {
-    "email":"kiki@gmail.com", 
+    "email":"admin@mindes.com",
     "username": "kiki",
-    "password": "kiki123",
-    "role": "user", 
-    "token" : "akmsgfgfhghghgjhjhjkkj"
+    "password": "admin123",
+    "role": "admin", 
+    "token" : "akmsgfgfhghghgjhjhjkdsdkj"
   }
 ]

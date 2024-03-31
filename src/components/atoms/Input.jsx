@@ -16,7 +16,7 @@ const Input = (props) => {
       return (
         <input
           type={type}
-          className="border-2 border-lightgray bg-white h-[45px] w-full px-5 pr-5 rounded-md text-sm focus:outline-none"
+          className="border-2 border-lightgray bg-white h-auto w-full px-5 pr-5 rounded-md text-sm focus:outline-none"
           placeholder={placeholder}
           onChange={onChange}
           value={value}
@@ -26,7 +26,7 @@ const Input = (props) => {
 
     case "InputWithIcon":
       return (
-        <div className="border-2 border-secondary h-[60px] w-full lg:w-[60%]  px-5 pr-5 rounded-md flex justify-center items-center space-x-5">
+        <div className="bg-white border-2 border-secondary h-[60px] w-full lg:w-[100%]  px-5 pr-5 rounded-md flex justify-center items-center space-x-5">
           {icon}
           <input
             type={type}
@@ -42,7 +42,7 @@ const Input = (props) => {
       return (
         <input
           type={type}
-          className={className}
+          className={`focus:outline-none placeholder:text-secondary px-4 py-2 rounded-md ${className}`}
           placeholder={placeholder}
           onChange={onChange}
           value={value}

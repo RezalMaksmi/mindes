@@ -1,15 +1,17 @@
 import React, {useState} from 'react'
-import { Button, CardTable, Input, ShowCard } from '../../components';
-import { BiSearch} from "react-icons/bi";
-import { Data } from "../../data";
+import { Button, CardTable, Input, NavTop, ShowCard } from '../components';
+import { BiSearch, BiSliderAlt, BiSolidUserPlus } from "react-icons/bi";
+import { Data } from "../data";
 import ReactPaginate from 'react-paginate';
-import { LuCheckCircle, LuClock10, LuLoader2 } from 'react-icons/lu';
 
-const DashboardPengajuanAdmin = () => {
+
+const DataPenduduk = () => {
 
   const [currentPage, setCurrentPage] = useState(0);
+  const [addData, setAddData] = React.useState(false);
   const [openEdit, setOpenEdit] = React.useState(false);
   const [openDetail, setOpenDetail] = React.useState(false);
+  const [openDataId, setOpenDataId] = React.useState("");
   const [openActiveTest, setOpenActiveTest] = React.useState(false);
   const [showTable, setShowTable] = React.useState(10);
   const [status, setStatus] = React.useState("");
@@ -23,38 +25,32 @@ const DashboardPengajuanAdmin = () => {
     setCurrentPage(selected);
   };
 
+  const handleAddData = () => {
+    setAddData(true);
+  };
+  const handleEdit = () => {
+    setOpenEdit(true);
+  };
+  const handleOpenDetail = () => {
+    setOpenDetail(false)
+  };
+
+  const handleOpenActiveTest = () => {
+    setOpenActiveTest(true)
+  };
   
  
   return (
     <div className="pl-[80px] w-full h-auto  flex justify-center ">
-      <div className="bg-[#fff] mx-auto  w-full h-auto scrollbar-thumb-white scrollbar-track-slate-300 ">
-        {/* <ShowCard type="ShowData"  opens={openDetail} close={()=> setOpenDetail(false)} id="" /> */}
+      <div className=" bg-white mx-auto  w-full h-auto scrollbar-thumb-white scrollbar-track-slate-300 ">
+        <ShowCard type="AddData" opens={addData} close={()=> setAddData(false)} />
+        {/* <ShowCard type="ShowData"  opens={openDetail} close={()=> setOpenDetail(false)} id={openDataId} />
+        <ShowCard type="ActiveTest"  opens={openActiveTest} close={()=> setOpenActiveTest(false)} id={openDataId} /> */}
         <div className="w-auto h-[55px] px-10 pt-3 flex flex-row justify-between">
-          <div className="flex gap-2 max-w-2xl w-full pr-10">
+          <div className="flex gap-2 max-w-2xl w-full">
+            <Button type="ButtonTextIcon" className="bg-[#FF4E4E] items-center text-white " text="tambah" onClick={handleAddData} icon={<BiSolidUserPlus  className='text-2xl' />} />
             <Input typeInput="Search" placeholder="Search..." />
             <Button type="ButtonTextIcon" className="bg-[#a0a0a0] items-center text-white " text="Cari" icon={<BiSearch className='text-2xl' />} />
-          </div>
-          <div className="flex flex-row h-full  gap-3  items-center  w-full">
-            <button className=" bg-[#1C305D] gap-1 rounded-full px-4 h-full flex flex-row items-center text-white" >
-              <LuClock10 />
-              <span className='font-semibold text-base'>
-              Belum Diproses
-              </span>
-            </button>
-
-            <button className=" border-2 border-[#1C305D] bg-[#fff] gap-1 rounded-full px-4 h-full flex flex-row items-center text-[#1C305D]" >
-              <LuLoader2 />
-              <span className='font-semibold text-base'>
-                Belum Diproses
-              </span>
-            </button>
-
-            <button className=" border-2 border-[#1C305D] bg-[#fff] gap-1 rounded-full px-4 h-full flex flex-row items-center text-[#1C305D]" >
-              <LuCheckCircle />
-              <span className='font-semibold text-base'>
-                Sudah Diproses
-              </span>
-            </button>
           </div>
           <div className=" flex flex-row gap-4 ">
             <label >
@@ -92,8 +88,10 @@ const DashboardPengajuanAdmin = () => {
                         NamaPemohon={item.nama}
                         JenisSurat={item.jenis_surat}
                         Tanggal={item.tanggal}
-                        ActShow=""
-                        type="ajuan"
+                        ActShow={()=>handleOpenDetail(item.id)}
+                        ActEdit={()=>handleEdit(item.no)}
+                        ActActiveTest={()=> handleOpenActiveTest(i+1)}
+                        
                     />);
                   })
                 }
@@ -127,5 +125,4 @@ const DashboardPengajuanAdmin = () => {
   )
 }
 
-export default DashboardPengajuanAdmin
-
+export default DataPenduduk
