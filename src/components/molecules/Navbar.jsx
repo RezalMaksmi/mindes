@@ -43,7 +43,7 @@ const Navbar = () => {
         <NavbarDashboard />
       </>
     ) : (
-      <div className="  px-5 fixed top-5 w-full flex justify-center ">
+      <div className="  px-5 fixed top-5 w-full flex justify-center z-20">
       <section className="container rounded-full bg-white shadow border w-full z-30">
         <div className="  w-full h-full mx-auto px-10 lg:px-24 py-2 lg:py-3 flex justify-between relative items-center ">
           <div className="h-9 my-2">
