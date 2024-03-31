@@ -1,20 +1,26 @@
-import React from 'react'
-import NavTop from '../components/atoms/NavTop'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { HomeUser, NavbarDashboard, PengajuanUser } from '../components'
+import React, {useState, useEffect} from 'react'
+import { HomeAdmin, HomeUser } from '../components'
 
 const DashboardUser = () => {
-  return (
-    <div className="pl-[80px] w-full h-screen  flex justify-center ">
-      <div className=" bg-white mx-auto  w-full h-auto scrollbar-thumb-white scrollbar-track-slate-300 ">
-        <NavTop />
-        <NavbarDashboard />
+  const getUserDataFromLocalStorage = () => {
+    const user = localStorage.getItem("userData"); 
+    return user ? JSON.parse(user) : {};
+  };
+  const { token, role } = getUserDataFromLocalStorage();
 
-            <Routes>
-                <Route path="/" element={<HomeUser />} />
-                <Route path="/dashboard/ajuan" element={<PengajuanUser />} />
-            </Routes>
-      
+
+
+  return (
+    <div className="pl-[80px] w-full h-auto  flex justify-center ">
+      <div className=" bg-white mx-auto  w-full h-auto scrollbar-thumb-white scrollbar-track-slate-300 ">
+        {
+          role === "admin" && token ? (
+            <HomeAdmin />
+            ) :(
+            <HomeUser />
+          )
+        }
+       
 
       </div>
     </div>
