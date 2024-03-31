@@ -26,8 +26,7 @@ const Button = (props) => {
           href="/"
           target="_blank"
           rel="noopener noreferrer"
-          className={`px-4 py-2 rounded-lg  font-semibold bg-white border text-black`}
-        >
+          className={`px-4 py-2 rounded-lg  font-semibold bg-white hover:bg-[#101A57] border transition-all hover:text-white text-black`}>
           <span>{text}</span>
         </a>
       );

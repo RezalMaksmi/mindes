@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 import { LuAlignRight } from "react-icons/lu";
 import { LuX } from "react-icons/lu";
+import { NavTop } from "../atoms";
 import NavbarDashboard from "./NavbarDashboard";
-import NavTop from "../atoms/NavTop";
 
 const Navbar = () => {
   const [active, setActive] = React.useState(false);
