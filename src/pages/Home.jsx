@@ -1,25 +1,29 @@
 import React from "react";
 import "../../src/index.css";
 import background from "../assets/village-landingpage.png";
-import { About, Artikel, Benefit, Contact, Features, Team } from "../components/molecules";
+import {
+  About,
+  Artikel,
+  Benefit,
+  Contact,
+  Features,
+  Team,
+} from "../components/molecules";
 import { Text } from "../components/atoms";
 import DashboardUser from "./DashboardUser";
-
-
+import Footer from "../components/molecules/Footer";
 
 const Home = () => {
-
   const getUserDataFromLocalStorage = () => {
-    const user = localStorage.getItem("userData"); 
+    const user = localStorage.getItem("userData");
     return user ? JSON.parse(user) : {};
   };
- 
+
   const { token, role } = getUserDataFromLocalStorage();
 
-return (
-role && token ? (
-        <DashboardUser />
-    ) : (
+  return role && token ? (
+    <DashboardUser />
+  ) : (
     <section className=" mx-auto">
       <div
         className=" h-[100vh] flex flex-col justify-center md:items-start items-center bg-no-repeat lg:bg-cover lg:mt-[110px] bg-contain bg-bottom"
@@ -38,13 +42,9 @@ role && token ? (
       <Team />
       <Artikel />
       <Contact />
+      <Footer />
     </section>
-    )
-)
-  
-    
-   
-  
+  );
 };
 
 export default Home;
