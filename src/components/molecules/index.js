@@ -18,6 +18,7 @@ import Artikel from "./Artikel";
 import Team from "./Team";
 import About from "./About";
 import Contact from "./Contact";
+import Footer from './Footer'
 
 export {
   Navbar,
@@ -40,4 +41,5 @@ export {
   Team,
   About,
   Contact,
+  Footer
 };

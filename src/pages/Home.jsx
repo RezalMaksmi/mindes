@@ -8,10 +8,10 @@ import {
   Contact,
   Features,
   Team,
+  Footer,
 } from "../components/molecules";
 import { Text } from "../components/atoms";
 import DashboardUser from "./DashboardUser";
-import Footer from "../components/molecules/Footer";
 
 const Home = () => {
   const getUserDataFromLocalStorage = () => {
