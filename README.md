@@ -5,10 +5,14 @@ Mindes Adalah Website Pelayanan Administrasi Desa akan membuat pengguna menikmat
 ## Nirwana Nusantara
 
 Anggota :
-Muhammad Hasyim - (Hustler)
-Lintang Aura Syufee - (Hipster)
-Rezal Nur Syaifudin - (Hacker)
-Muhammad Rizqi Fajri - (Hacker)
+
+1. Muhammad Hasyim - (Hustler)
+
+2. Lintang Aura Syufee - (Hipster)
+
+3. Rezal Nur Syaifudin - (Hacker)
+
+4. Muhammad Rizqi Fajri - (Hacker)
 
 ## Auth Login (User) 
 
