@@ -1,8 +1,88 @@
-import React from 'react'
-import { BiLoaderCircle, BiShow } from 'react-icons/bi';
+import React, { useState } from 'react'
+import { BiLoaderCircle } from 'react-icons/bi';
 import { LuCheckCircle, LuClock, LuClock10, LuLoader2 } from 'react-icons/lu'
+import CardTable from './CardTable';
+import { Data, DataProses, DataSelesai } from '../../data';
+import { useNavigate } from 'react-router';
 
 const DashboardHomeUser = () => {
+  const navigate = useNavigate();
+  const [selectedMenu, setSelectedMenu] = useState('belum');
+  const [currentPage, setCurrentPage] = useState(0);
+  const [showTable, setShowTable] = React.useState(5);
+
+  const perPage = typeof window !== "undefined" && window.innerWidth < 768 ? 1 : showTable;
+  const pageCount = Math.ceil(Data.length / perPage);
+
+  const offset = currentPage * perPage;
+  const currentPageData = Data.slice(offset, offset + perPage);
+  const handlePageChange = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+
+  const handleMenuClick = (menu) => {
+    setSelectedMenu(menu);
+  };
+  let content;
+
+  switch (selectedMenu) {
+    case 'belum':
+      content = currentPageData.map((item, i) => {
+          return (
+            <CardTable 
+              key={i}
+              No={i+1}
+              
+              NamaPemohon={item.nama}
+              JenisSurat={item.jenis_surat}
+              Tanggal={item.tanggal}
+              ActShow={()=>setSelectedMenu('proses')}
+              type="Ajuan"
+            />);
+          });
+      break;
+    case 'proses':
+      content = DataProses.map((item, i) => {
+        return (
+        <CardTable 
+        key={i}
+            No={i+1}
+            NamaPemohon={item.nama}
+            JenisSurat={item.jenis_surat}
+            Tanggal={item.tanggal}
+            ActShow={()=>setSelectedMenu('selesai')}
+            type="Diproses"
+        />);
+      });
+      break;
+    case 'selesai':
+      content = DataSelesai.map((item, i) => {
+        return (
+        <CardTable 
+        key={i}
+            No={i+1}
+            NamaPemohon={item.nama}
+            JenisSurat={item.jenis_surat}
+            Tanggal={item.tanggal}
+            ActShow=""
+            type="Selesai"
+        />);
+      });
+      break;
+    default:
+      content = currentPageData.map((item, i) => {
+        return (
+        <CardTable 
+        key={i}
+            No={i+1}
+            NamaPemohon={item.nama}
+            JenisSurat={item.jenis_surat}
+            Tanggal={item.tanggal}
+            ActShow=""
+            type="Ajuan"
+        />);
+      });
+  }
   return (
     <div className=' px-4 pt-4'>
       <div className="grid grid-cols-3 lg:gap-6 gap-3">
@@ -52,24 +132,27 @@ const DashboardHomeUser = () => {
 
       <div className="grid lg:col-span-2 col-span-3 rounded-xl  w-auto p-0 gap-5 items-start  content-start">
           
-          <div className="flex flex-row h-[50px]  gap-3  items-center">
-            <button className=" bg-[#1C305D] gap-1 rounded-full px-6 h-full flex flex-row items-center text-white" >
+          <div className="flex flex-row h-full  gap-3  items-center  w-full">
+            <button className={` py-2 ${selectedMenu === "belum"  ? 'bg-[#1C305D] text-white' : 'border-2 border-[#1C305D] bg-[#fff] text-[#1C305D]'} gap-1 rounded-full px-4 h-full flex flex-row items-center `} 
+            onClick={() => handleMenuClick('belum')}>
               <LuClock10 />
-              <span className='font-semibold'>
-              Belum Diproses
-              </span>
-            </button>
-
-            <button className=" border-2 border-[#1C305D] bg-[#fff] gap-1 rounded-full px-6 h-full flex flex-row items-center text-[#1C305D]" >
-              <LuLoader2 />
-              <span className='font-semibold'>
+              <span className='font-semibold text-base'>
                 Belum Diproses
               </span>
             </button>
 
-            <button className=" border-2 border-[#1C305D] bg-[#fff] gap-1 rounded-full px-6 h-full flex flex-row items-center text-[#1C305D]" >
+            <button className={` py-2 ${selectedMenu === "proses"  ? 'bg-[#1C305D] text-white' : 'border-2 border-[#1C305D] bg-[#fff] text-[#1C305D]'} gap-1 rounded-full px-4 h-full flex flex-row items-center `} 
+            onClick={() => handleMenuClick('proses')}>
+              <LuLoader2 />
+              <span className='font-semibold text-base'>
+                Sedang Diproses
+              </span>
+            </button>
+
+            <button className={` py-2 ${selectedMenu === "selesai"  ? 'bg-[#1C305D] text-white' : 'border-2 border-[#1C305D] bg-[#fff] text-[#1C305D]'} gap-1 rounded-full px-4 h-full flex flex-row items-center `} 
+            onClick={() => handleMenuClick('selesai')}>
               <LuCheckCircle />
-              <span className='font-semibold'>
+              <span className='font-semibold text-base'>
                 Sudah Diproses
               </span>
             </button>
@@ -87,11 +170,10 @@ const DashboardHomeUser = () => {
                   <th className='border border-[#ffffff]'>Nama Pemohon</th>
                   <th className='border border-[#ffffff]'>Jenis Surat</th>
                   <th className='border border-[#ffffff]'>Tanggal Diajukan</th>
-                  <th className='border border-[#ffffff]'>Tombol</th>
                 </tr>
               </thead>
               <tbody >
-              <tr className='border border-[#929292] '>
+              {/* <tr className='border border-[#929292] '>
                 <td className='border py-3 border-[#929292] px-2 text-center'>1</td>
                 <td className='border border-[#929292] px-2'>Ananda Amananta</td>
                 <td className='border border-[#929292] px-2'>SKTM</td>
@@ -114,7 +196,8 @@ const DashboardHomeUser = () => {
                     <span>Lihat</span>
                   </button>
                   </td>
-              </tr> 
+              </tr>  */}
+              {content}
               </tbody>
             </table> 
             <div className="flex w-full justify-between items-center h-10 auto-cols-min	mt-5">
