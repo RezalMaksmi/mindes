@@ -6,7 +6,7 @@ import { Mail } from "lucide-react";
 
 const Contact = () => {
   return (
-    <div className="h-screen">
+    <div className="h-screen" id="kontak">
       <Text type="subtitle" text="Hubungi Kami" />
       <div className="flex flex-col lg:flex-row justify-center items-center gap-5 mx-auto">
         <form action="" className="bg-[#E0E9EF] rounded-lg w-fit ">

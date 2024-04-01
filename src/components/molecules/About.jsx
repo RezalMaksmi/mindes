@@ -5,7 +5,7 @@ import { LuCheckCircle } from "react-icons/lu";
 
 const About = () => {
   return (
-    <section className="bg-[#101A57] h-full">
+    <section className="bg-[#101A57] h-full" id="about" >
       <div className="flex flex-col justify-center items-center text-center">
         <h1 className="text-orange-500 text-[16px] md:text-[24px] font-medium">
           Tentang
