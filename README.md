@@ -39,6 +39,9 @@ Login user menggunakan email
   email :"admin@mindes.com"
   password : "admin123"
 
+## Demo 
+
+  link : https://main--mindes.netlify.app
 
 ## Installation
 
