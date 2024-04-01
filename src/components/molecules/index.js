@@ -5,7 +5,6 @@ import HomeUser from "./HomeUser";
 import PengajuanUser from "./PengajuanUser";
 import PengajuanAdmin from "./PengajuanAdmin";
 import AduanUser from "./AduanUser";
-import AduanAdmin from "./AduanAdmin";
 import HomeAdmin from "./HomeAdmin";
 import CardTable from "./CardTable";
 import ShowCard from "./ShowCard";
@@ -18,7 +17,9 @@ import Artikel from "./Artikel";
 import Team from "./Team";
 import About from "./About";
 import Contact from "./Contact";
-import Footer from './Footer'
+import Footer from "./Footer";
+import AduanAdmin from "./AduanAdmin";
+import AddAduanUser from "./AddAduanUser";
 
 export {
   Navbar,
@@ -41,5 +42,6 @@ export {
   Team,
   About,
   Contact,
-  Footer
+  Footer,
+  AddAduanUser,
 };
