@@ -73,7 +73,7 @@ const DashboardPengajuanAdmin = () => {
         <div className="mr-5">
           <div className=" w-full h-[70vh] mt-3 overflow-scroll pl-10 overflow-x-auto flex flex-col justify-between scrollbar-thin overflow-y-scroll ">
               <table className="table-fixed md:table-auto w-full max-h-max border-collapse border border-slate-500">
-              <thead className='bg-[#4BABD6] text-white h-11 sticky top-0 border border-[#929292]'>
+              <thead className='bg-[#E26848] text-white h-11 sticky top-0 border border-[#929292]'>
                 <tr className='w-full border border-[#929292]'>
                   <th className='border border-[#929292]'>No</th>
                   <th className='border border-[#929292]'>Nomor dan tanggal surat</th>
@@ -96,7 +96,7 @@ const DashboardPengajuanAdmin = () => {
                         JenisSurat={item.jenis_surat}
                         Tanggal={item.tanggal}
                         ActShow=""
-                        type="ajuan"
+                        type="Ajuan"
                     />);
                   })
                 }
