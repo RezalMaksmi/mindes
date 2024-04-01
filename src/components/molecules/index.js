@@ -5,7 +5,6 @@ import HomeUser from "./HomeUser";
 import PengajuanUser from "./PengajuanUser";
 import PengajuanAdmin from "./PengajuanAdmin";
 import AduanUser from "./AduanUser";
-import AduanAdmin from "./AduanAdmin";
 import HomeAdmin from "./HomeAdmin";
 import CardTable from "./CardTable";
 import ShowCard from "./ShowCard";
@@ -18,6 +17,7 @@ import Artikel from "./Artikel";
 import Team from "./Team";
 import About from "./About";
 import Contact from "./Contact";
+import AduanAdmin from "./AduanAdmin";
 
 export {
   Navbar,

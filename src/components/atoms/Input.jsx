@@ -67,7 +67,7 @@ const Input = (props) => {
       return (
         <input
           type={type}
-          className={`focus:outline-none placeholder:text-secondary px-4 py-2 rounded-md ${className}`}
+          className={`focus:outline-none placeholder:text-secondary  px-4 py-2 rounded-md border border-gray-400 ${className}`}
           placeholder={placeholder}
           onChange={onChange}
           value={value}
