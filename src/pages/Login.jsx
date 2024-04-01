@@ -8,6 +8,7 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [passwordAdmin, setPasswordAdmin] = useState('');
     const [openAdmin, setOpenAdmin] = useState(false);
     const [daftar, setDaftar] = useState(false);
     const [error, setError] = useState('');
@@ -17,7 +18,7 @@ const Login = () => {
     
         // Cek apakah data pengguna sesuai dengan data dummy json
         const user = Users.find(user => user.kode === username && user.password === password && user.role === "user" && !username.includes('@') );
-        const admin = Users.find(user => user.email === email && user.password === password && user.role === "admin" );
+        const admin = Users.find(user => user.email === email && user.password === passwordAdmin && user.role === "admin" );
     
         if (user) {
           // Autentikasi berhasil
@@ -48,7 +49,16 @@ const Login = () => {
         }
       };
 
-     
+      const handleOpenLogin = () =>{
+        setOpenAdmin(true)
+        setError('')
+        setDaftar(false)
+      }
+      const handleCloseLogin = () =>{
+        setOpenAdmin(false)
+        setError('')
+
+      }
   return (
     <div className={`w-full min-h-screen h-auto flex justify-center flex-col   `}>
     <div className={`container mx-auto flex flex-col-reverse lg:flex-row relative justify-between items-center lg:px-[70px] w-full `}>
@@ -94,7 +104,7 @@ const Login = () => {
                   Masuk
               </button>
               <button className="px-5 py-2 gap-1 text-base  text-[#E26848] rounded-lg flex items-center justify-center "
-                  onClick={() => setOpenAdmin(true)}>
+                  onClick={handleOpenLogin}>
                   <span>Masuk Sebagai Admin</span> 
                   <BiRightArrowAlt className='text-xl'/>
               </button>
@@ -127,9 +137,9 @@ const Login = () => {
                   <label htmlFor="email " className='font-semibold text-base'>Password</label>
                   <Input
                   placeholder="Enter Your Password"
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => setPasswordAdmin(e.target.value)}
                   name="password"
-                  value={password}
+                  value={passwordAdmin}
                   type="password"
                   typeInput="InputWithIcon"
                   icon={<BiKey className='text-2xl'/>}
@@ -145,7 +155,7 @@ const Login = () => {
                     Masuk
                 </button>
                 <button className="px-5 py-2 gap-1 text-base  text-[#E26848] rounded-lg flex items-center justify-center "
-                    onClick={() => setOpenAdmin(false)}>
+                    onClick={handleCloseLogin}>
                     <span>Masuk Sebagai User</span> 
                     <BiRightArrowAlt className='text-xl'/>
                 </button>
@@ -153,7 +163,7 @@ const Login = () => {
 
               </div>
               <br />
-              Belom Punya Akun ? <span className='cursor-pointer text-[#E26848] ' onClick={() => setDaftar(true)} >Daftar</span>
+              Belum Punya Akun ? <span className='cursor-pointer text-[#E26848] ' onClick={() => setDaftar(true)} >Daftar</span>
             </div>
           </>
           ) : (
@@ -212,7 +222,7 @@ const Login = () => {
 
               </div>
               <br />
-              Sudah Punya Akun ? <span className='cursor-pointer text-[#E26848] ' onClick={() => setDaftar(false)} >Daftar</span>
+              Sudah Punya Akun ? <span className='cursor-pointer text-[#E26848] ' onClick={() => setDaftar(false)} >Login</span>
             </div>
           </>
           )

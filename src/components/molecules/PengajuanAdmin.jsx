@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
-// import { Button, CardTable, Input, ShowCard } from '../../components';
 import { BiSearch} from "react-icons/bi";
-import { Data } from "../../data";
+import { Data, DataSelesai, DataProses } from "../../data";
 import ReactPaginate from 'react-paginate';
 import { LuCheckCircle, LuClock10, LuLoader2 } from 'react-icons/lu';
 import { Button, Input } from '../atoms';
@@ -9,13 +8,8 @@ import CardTable from './CardTable';
 
 
 const DashboardPengajuanAdmin = () => {
-
   const [currentPage, setCurrentPage] = useState(0);
-  const [openEdit, setOpenEdit] = React.useState(false);
-  const [openDetail, setOpenDetail] = React.useState(false);
-  const [openActiveTest, setOpenActiveTest] = React.useState(false);
   const [showTable, setShowTable] = React.useState(10);
-  const [status, setStatus] = React.useState("");
 
   const perPage = typeof window !== "undefined" && window.innerWidth < 768 ? 1 : showTable;
   const pageCount = Math.ceil(Data.length / perPage);
@@ -26,8 +20,77 @@ const DashboardPengajuanAdmin = () => {
     setCurrentPage(selected);
   };
 
-  
+  const [selectedMenu, setSelectedMenu] = useState('belum');
+
+  const handleMenuClick = (menu) => {
+    setSelectedMenu(menu);
+  };
+
+  let content;
+
+  switch (selectedMenu) {
+    case 'belum':
+      content = currentPageData.map((item, i) => {
+          return (
+            <CardTable 
+              key={i}
+              No={i+1}
+              NomorSurat={item.nomor}
+              NamaPemohon={item.nama}
+              JenisSurat={item.jenis_surat}
+              Tanggal={item.tanggal}
+              ActShow={()=>setSelectedMenu('proses')}
+              type="Ajuan"
+            />);
+          });
+      break;
+    case 'proses':
+      content = DataProses.map((item, i) => {
+        return (
+        <CardTable 
+        key={i}
+            No={i+1}
+            NomorSurat={item.nomor}
+            NamaPemohon={item.nama}
+            JenisSurat={item.jenis_surat}
+            Tanggal={item.tanggal}
+            ActShow={()=>setSelectedMenu('selesai')}
+            type="Diproses"
+        />);
+      });
+      break;
+    case 'selesai':
+      content = DataSelesai.map((item, i) => {
+        return (
+        <CardTable 
+        key={i}
+            No={i+1}
+            NomorSurat={item.nomor}
+            NamaPemohon={item.nama}
+            JenisSurat={item.jenis_surat}
+            Tanggal={item.tanggal}
+            ActShow=""
+            type="Selesai"
+        />);
+      });
+      break;
+    default:
+      content = currentPageData.map((item, i) => {
+        return (
+        <CardTable 
+        key={i}
+            No={i+1}
+            NomorSurat={item.nomor}
+            NamaPemohon={item.nama}
+            JenisSurat={item.jenis_surat}
+            Tanggal={item.tanggal}
+            ActShow=""
+            type="Ajuan"
+        />);
+      });
+  }
  
+ console.log(selectedMenu)
   return (
     <div className="pl-[80px] w-full h-auto  flex justify-center ">
       <div className="bg-[#fff] mx-auto  w-full h-auto scrollbar-thumb-white scrollbar-track-slate-300 ">
@@ -38,27 +101,32 @@ const DashboardPengajuanAdmin = () => {
             <Button type="ButtonTextIcon" className="bg-[#a0a0a0] items-center text-white " text="Cari" icon={<BiSearch className='text-2xl' />} />
           </div>
           <div className="flex flex-row h-full  gap-3  items-center  w-full">
-            <button className=" bg-[#1C305D] gap-1 rounded-full px-4 h-full flex flex-row items-center text-white" >
+            <button className={` ${selectedMenu === "belum"  ? 'bg-[#1C305D] text-white' : 'border-2 border-[#1C305D] bg-[#fff] text-[#1C305D]'} gap-1 rounded-full px-4 h-full flex flex-row items-center `} 
+            onClick={() => handleMenuClick('belum')}>
               <LuClock10 />
-              <span className='font-semibold text-base'>
-              Belum Diproses
-              </span>
-            </button>
-
-            <button className=" border-2 border-[#1C305D] bg-[#fff] gap-1 rounded-full px-4 h-full flex flex-row items-center text-[#1C305D]" >
-              <LuLoader2 />
               <span className='font-semibold text-base'>
                 Belum Diproses
               </span>
             </button>
 
-            <button className=" border-2 border-[#1C305D] bg-[#fff] gap-1 rounded-full px-4 h-full flex flex-row items-center text-[#1C305D]" >
+            <button className={` ${selectedMenu === "proses"  ? 'bg-[#1C305D] text-white' : 'border-2 border-[#1C305D] bg-[#fff] text-[#1C305D]'} gap-1 rounded-full px-4 h-full flex flex-row items-center `} 
+            onClick={() => handleMenuClick('proses')}>
+              <LuLoader2 />
+              <span className='font-semibold text-base'>
+                Sedang Diproses
+              </span>
+            </button>
+
+            <button className={` ${selectedMenu === "selesai"  ? 'bg-[#1C305D] text-white' : 'border-2 border-[#1C305D] bg-[#fff] text-[#1C305D]'} gap-1 rounded-full px-4 h-full flex flex-row items-center `} 
+            onClick={() => handleMenuClick('selesai')}>
               <LuCheckCircle />
               <span className='font-semibold text-base'>
                 Sudah Diproses
               </span>
             </button>
           </div>
+
+
           <div className=" flex flex-row gap-4 ">
             <label >
               <select className='w-[100px] px-2 py-2 focus:outline-none border rounded-md' name="selectedJenisPeserta" 
@@ -85,21 +153,7 @@ const DashboardPengajuanAdmin = () => {
               </thead>
              
               <tbody >
-                {
-                  currentPageData.map((item, i) => {
-                    return (
-                    <CardTable 
-                    key={i}
-                        No={i+1}
-                        NomorSurat={item.nomor}
-                        NamaPemohon={item.nama}
-                        JenisSurat={item.jenis_surat}
-                        Tanggal={item.tanggal}
-                        ActShow=""
-                        type="Ajuan"
-                    />);
-                  })
-                }
+              {content}
               </tbody>
           
             </table>  

@@ -1,15 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
+
 import { BiPlus, BiShow } from 'react-icons/bi'
 import { LuClock } from 'react-icons/lu'
 import { Button } from '../atoms'
 import { useNavigate } from "react-router-dom";
+import CardTable from './CardTable';
 
 const AduanUser = () => {
   const navigate = useNavigate();
 
+
   const handleAddAduan = () => {
     navigate("/aduan/tambah");
   }
+
   return (
     <div className="pl-[80px] w-full h-auto  flex justify-center ">
       <div className=" bg-white mx-auto  w-full h-auto scrollbar-thumb-white scrollbar-track-slate-300 ">
@@ -17,7 +21,6 @@ const AduanUser = () => {
     <div className=' px-4 pt-4 '>
     <div className="grid grid-cols-3 lg:gap-6 gap-3">
       {/* top info */}
-      
       <div className="grid lg:col-span-3 col-span-3 rounded-xl bg-[#E0E9EF] w-auto lg:p-6 p-3 gap-4 border-[#C1C1C1] ">
         <div className="flex justify-between w-full">
         <h2 className='text-2xl font-bold'>Jumlah Aduan</h2>
