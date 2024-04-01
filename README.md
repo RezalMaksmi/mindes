@@ -13,24 +13,23 @@ Muhammad Rizqi Fajri - (Hacker)
 ## Auth Login (User) 
 
 Login user menggunakan kode (kode ini didapatkan oleh desa setempat yang sudah terdaftar di website MINDES)
-
-  kode : "rezal123"
+  -kode : "rezal123"
   password: "rezal123"
     
-  kode : "lintang123"
+  -kode : "lintang123"
   password: "lintang123"
 
-  kode : "kiki123"
+  -kode : "kiki123"
   password: "kiki123"
 
-  kode : "hasyim123"
+  -kode : "hasyim123"
   password: "hasyim123"
 
-  kode : "frans123"
+  -kode : "frans123"
   password: "frans123"
 
 ## Auth Login (Admin) 
-
+Login user menggunakan email 
   email :"admin@mindes.com"
   password : "admin123"
 
