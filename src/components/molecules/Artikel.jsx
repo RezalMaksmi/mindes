@@ -22,7 +22,7 @@ const articlesData = [
 
 const Artikel = () => {
   return (
-    <section className="h-full bg-[#E0E9EF]">
+    <section className="h-full bg-[#E0E9EF] " id="artikel">
       <div className="text-center">
         <h1 className="font-bold text-[30px] md:text-[48px] text-[#101A57]">Artikel MINDES</h1>
         <h3 className="font-medium text-[12px] md:text-[20px] text-[#101A57]">

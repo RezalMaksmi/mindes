@@ -4,7 +4,7 @@ import { Text } from "../atoms";
 
 const Features = () => {
   return (
-    <section className="h-full ">
+    <section className="h-full " id="fitur">
       <div>
         <Text className="mx-auto" type="subtitle" text="Fitur MINDES" />
         <CardFeatures />

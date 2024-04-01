@@ -1,14 +1,14 @@
 import React from "react";
 
-const Text = ({ text, type }) => {
+const Text = ({ text, type, className }) => {
   switch (type) {
     case "title":
       return (
-        <div className="mx-auto">
-          <h1 className="text-[25px] mx-auto xl:text-[48px] font-bold z-20 text-transparent bg-clip-text bg-gradient-to-r w-max from-[#1C305D] to-[#E26848]">
+    
+          <h1 className={`text-[25px]  xl:text-[48px] font-bold z-20 text-transparent bg-clip-text bg-gradient-to-r w-max from-[#1C305D] to-[#E26848] ${className}`}>
             {text}
           </h1>
-        </div>
+   
       );
 
     case "subtitle" :

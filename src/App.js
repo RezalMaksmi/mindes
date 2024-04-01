@@ -11,7 +11,7 @@ import {
 } from "./pages";
 
 import News from "./pages/News";
-import { Navbar } from "./components";
+import { AddAduanUser, AduanUser, Navbar } from "./components";
 
 function App() {
   const getUserDataFromLocalStorage = () => {
@@ -29,6 +29,7 @@ function App() {
           <Route path="/" element={<DashboardUser />} />
           <Route path="/ajuan" element={<Pengajuan />} />
           <Route path="/aduan" element={<Pengaduan />} />
+          <Route path="/aduan/tambah" element={<AddAduanUser />} />
           <Route path="/arsip" element={<Arsip />} />
           <Route path="/data" element={<DataPenduduk />} />
           <Route path="/news" element={<News />} />

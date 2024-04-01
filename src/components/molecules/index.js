@@ -18,6 +18,7 @@ import Team from "./Team";
 import About from "./About";
 import Contact from "./Contact";
 import AduanAdmin from "./AduanAdmin";
+import AddAduanUser from "./AddAduanUser";
 
 export {
   Navbar,
@@ -40,4 +41,5 @@ export {
   Team,
   About,
   Contact,
+  AddAduanUser,
 };
