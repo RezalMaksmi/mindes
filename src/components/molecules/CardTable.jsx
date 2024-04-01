@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from '../atoms'
-import { BiCheckCircle, BiCheckShield, BiCheckSquare,  BiEdit,  BiShow } from 'react-icons/bi'
+import { BiCheckCircle, BiEdit,  BiShow } from 'react-icons/bi'
 import { LuDelete } from 'react-icons/lu'
 
 const CardTable = (props) => {
