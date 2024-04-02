@@ -19,6 +19,7 @@ import About from "./About";
 import Contact from "./Contact";
 import AduanAdmin from "./AduanAdmin";
 import AddAduanUser from "./AddAduanUser";
+import AddAjuanUser from "./AddAjuanUser";
 import Footer from "./Footer";
 
 export {
@@ -43,5 +44,6 @@ export {
   About,
   Contact,
   AddAduanUser,
+  AddAjuanUser,
   Footer,
 };
