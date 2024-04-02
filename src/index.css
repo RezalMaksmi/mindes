@@ -17,6 +17,22 @@ body {
 
 }
 
+@layer utilities {
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -45,7 +61,17 @@ code {
   border: 1px solid #ccc;
 }
 
+.geser {
+  transition: transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  -moz-transition: transform 0.2s;
+  -ms-transition: transform 0.2s;
+  -o-transition: transform 0.2s;
+}
 
+.kembali {
+  flex-direction: row;
+}
 
 .back {
   transform: rotateY(360deg);
@@ -55,9 +81,9 @@ code {
   -o-transform: rotateY(360deg);
 }
 
-.front {
+/* .front {
   transform: rotateY(0deg);
-}
+} */
 
 
 
@@ -80,4 +106,56 @@ code {
 
 .dropzone:hover, .dragging:hover {
   border-color: #666;
+}
+
+.ketentuan {
+  position: relative;
+}
+
+
+.ketentuan:hover::before {
+  transition-duration: 5s;
+  position: absolute;
+  width: max-content;
+  top: 25px;
+  left: 45px;
+  content: "Dapatkan kode login user dari desa!";
+  background-color: #8d8d8d;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 0px 10px 10px 10px;
+  -webkit-border-radius: 0px 10px 10px 10px;
+  -moz-border-radius: 0px 10px 10px 10px;
+  -ms-border-radius: 0px 10px 10px 10px;
+  -o-border-radius: 0px 10px 10px 10px;
+  -webkit-transition: 2s;
+  -moz-transition: 2s;
+  -ms-transition: 2s;
+  -o-transition: 2s;
+}
+
+@media only screen and (max-width: 768px) {
+  .ketentuan:hover::before {
+    width: max-content;
+    top: 29px;
+    left: -130px;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -ms-border-radius: 10px 10px 10px 10px;
+    -o-border-radius: 10px 10px 10px 10px;
+  }
+
+  .ketentuan:hover::after {
+    content: "";
+    border-bottom: solid 10px #8d8d8d;
+    border-left: solid 10px rgba(255, 0, 0, 0);
+    border-right: solid 10px rgba(255, 255, 0, 0);
+
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    left: 20px;
+
+  }
 }

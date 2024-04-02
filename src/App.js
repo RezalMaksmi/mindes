@@ -11,7 +11,7 @@ import {
 } from "./pages";
 
 import News from "./pages/News";
-import { AddAduanUser, AduanUser, Navbar } from "./components";
+import { AddAduanUser, AddAjuanUser, AduanUser, Footer, Navbar } from "./components";
 import NewsDetailsUser from "./components/molecules/NewsDetailsUser";
 
 function App() {
@@ -25,10 +25,11 @@ function App() {
     <BrowserRouter>
       <Navbar />
 
-      {token ? (
+      {token && role ? (
         <Routes>
           <Route path="/" element={<DashboardUser />} />
           <Route path="/ajuan" element={<Pengajuan />} />
+          <Route path="/ajuan/tambah" element={<AddAjuanUser />} />
           <Route path="/aduan" element={<Pengaduan />} />
           <Route path="/aduan/tambah" element={<AddAduanUser />} />
           <Route path="/arsip" element={<Arsip />} />
@@ -42,6 +43,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
       )}
+      <Footer />
     </BrowserRouter>
   );
 }

@@ -11,10 +11,8 @@ const DataPenduduk = () => {
   const [addData, setAddData] = React.useState(false);
   const [openEdit, setOpenEdit] = React.useState(false);
   const [openDetail, setOpenDetail] = React.useState(false);
-  const [openDataId, setOpenDataId] = React.useState("");
   const [openActiveTest, setOpenActiveTest] = React.useState(false);
   const [showTable, setShowTable] = React.useState(10);
-  const [status, setStatus] = React.useState("");
 
   const perPage = typeof window !== "undefined" && window.innerWidth < 768 ? 1 : showTable;
   const pageCount = Math.ceil(Data.length / perPage);
@@ -70,9 +68,11 @@ const DataPenduduk = () => {
                 <tr className='w-full border border-[#929292]'>
                   <th className='border border-[#929292]'>No</th>
                   <th className='border border-[#929292]'>Nomor dan tanggal surat</th>
-                  <th className='border border-[#929292]'>nama pemohon</th>
-                  <th className='border border-[#929292]'>Jenis surat</th>
-                  <th className='border border-[#929292]'>tanggal diajukan</th>
+                  <th className='border border-[#929292]'>Nama</th>
+                  <th className='border border-[#929292]'>Agama</th>
+                  <th className='border border-[#929292]'>Jenis Kelamin</th>
+                  <th className='border border-[#929292]'>Tempat tanggal Lahir</th>
+                  <th className='border border-[#929292]'>Alamat</th>
                   <th className='border border-[#929292] md:w-[150px] w-[60px]'>Action</th>
                 </tr>
               </thead>
@@ -82,16 +82,17 @@ const DataPenduduk = () => {
                   currentPageData.map((item, i) => {
                     return (
                     <CardTable 
-                    key={i}
+                        key={i}
                         No={i+1}
-                        NomorSurat={item.nomor}
+                        NomorSurat={item.no_kk}
                         NamaPemohon={item.nama}
-                        JenisSurat={item.jenis_surat}
+                        JenisKelamin={item.gender}
+                        Agama={item.agama}
                         Tanggal={item.tanggal}
+                        Alamat={item.alamat}
                         ActShow={()=>handleOpenDetail(item.id)}
                         ActEdit={()=>handleEdit(item.no)}
                         ActActiveTest={()=> handleOpenActiveTest(i+1)}
-                        
                     />);
                   })
                 }

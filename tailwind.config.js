@@ -12,6 +12,10 @@ module.exports = {
         bg_color: "#F4F7FC",
         imagebox_color: "#C4C4C4",
       },
+      transitionProperty: {
+        right: "height",
+        left: "margin, padding",
+      },
       boxShadow: {
         box_item: "0px 3px 10px 0px rgba(129, 129, 129, 0.21)",
       },

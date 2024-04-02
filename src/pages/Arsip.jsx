@@ -75,8 +75,7 @@ const Arsip = () => {
                         NamaPemohon={item.nama}
                         JenisSurat={item.jenis_surat}
                         Tanggal={item.tanggal}
-                        ActShow=""
-                        type="Arsip"
+                        type="Selesai"
                     />);
                   })
                 }

@@ -37,8 +37,8 @@ const Navbar = () => {
         <NavbarDashboard />
       </>
     ) : (
-      <div className="  lg:px-10 px-3 fixed top-5 w-full flex justify-center z-20">
-        <section className="container rounded-full bg-white shadow border w-full z-30">
+      <div className="  lg:px-10 px-3 fixed top-5 w-full flex justify-center z-50">
+        <section className="container rounded-full bg-white shadow border w-full ">
           <div className="  w-full h-full mx-auto px-8 lg:px-24 py-1 lg:py-3 flex justify-between relative items-center ">
             <div className="h-9 my-2 flex justify-center items-center">
               <img src={logo} alt="" className="lg:h-full h-[60%]" />
