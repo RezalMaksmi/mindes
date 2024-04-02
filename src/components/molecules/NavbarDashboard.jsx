@@ -5,7 +5,13 @@ import {  BiChat, BiFile, BiHomeAlt, BiInfinite, BiMessage, BiMessageAltDetail, 
 
 
 const NavbarDashboard = () => {
-
+    const [isHome, setIsHome] = useState(false);
+    const [isShowData, setIsShowData] = useState(false);
+    const [isShowArsip, setIsShowArsip] = useState(false);
+    const [isShowAduan, setIsShowAduan] = useState(false);
+    const [isShowAjuan, setIsShowAjuan] = useState(false);
+    const [isShowNews, setIsShowNews] = useState(false);
+    const [isShowLogout,setIsShownLogout] = useState(false);
     const [active, setActive] = React.useState(false);
 
     let navigate = useNavigate(); 
@@ -25,16 +31,7 @@ const NavbarDashboard = () => {
       window.location.reload(false);
     };
   
-    console.log(role)
-  
-  
-    const [isHome, setIsHome] = useState(false);
-    const [isShowData, setIsShowData] = useState(false);
-    const [isShowArsip, setIsShowArsip] = useState(false);
-    const [isShowAduan, setIsShowAduan] = useState(false);
-    const [isShowAjuan, setIsShowAjuan] = useState(false);
-    const [isShowNews, setIsShowNews] = useState(false);
-    const [isShowLogout,setIsShownLogout] = useState(false);
+   
     
   return (
 

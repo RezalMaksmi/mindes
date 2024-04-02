@@ -11,10 +11,8 @@ const DataPenduduk = () => {
   const [addData, setAddData] = React.useState(false);
   const [openEdit, setOpenEdit] = React.useState(false);
   const [openDetail, setOpenDetail] = React.useState(false);
-  const [openDataId, setOpenDataId] = React.useState("");
   const [openActiveTest, setOpenActiveTest] = React.useState(false);
   const [showTable, setShowTable] = React.useState(10);
-  const [status, setStatus] = React.useState("");
 
   const perPage = typeof window !== "undefined" && window.innerWidth < 768 ? 1 : showTable;
   const pageCount = Math.ceil(Data.length / perPage);
@@ -84,7 +82,7 @@ const DataPenduduk = () => {
                   currentPageData.map((item, i) => {
                     return (
                     <CardTable 
-                    key={i}
+                        key={i}
                         No={i+1}
                         NomorSurat={item.no_kk}
                         NamaPemohon={item.nama}
@@ -95,7 +93,6 @@ const DataPenduduk = () => {
                         ActShow={()=>handleOpenDetail(item.id)}
                         ActEdit={()=>handleEdit(item.no)}
                         ActActiveTest={()=> handleOpenActiveTest(i+1)}
-                        
                     />);
                   })
                 }

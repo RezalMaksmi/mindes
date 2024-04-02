@@ -69,7 +69,6 @@ const DashboardPengajuanAdmin = () => {
             NamaPemohon={item.nama}
             JenisSurat={item.jenis_surat}
             Tanggal={item.tanggal}
-            ActShow=""
             type="Selesai"
         />);
       });
@@ -84,13 +83,11 @@ const DashboardPengajuanAdmin = () => {
             NamaPemohon={item.nama}
             JenisSurat={item.jenis_surat}
             Tanggal={item.tanggal}
-            ActShow=""
             type="Ajuan"
         />);
       });
   }
  
- console.log(selectedMenu)
   return (
     <div className="pl-[80px] w-full h-auto  flex justify-center ">
       <div className="bg-[#fff] mx-auto  w-full h-auto scrollbar-thumb-white scrollbar-track-slate-300 ">

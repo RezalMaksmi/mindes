@@ -69,6 +69,9 @@ const CardTable = (props) => {
               <td className='border border-[#929292] px-2'>{NamaPemohon}</td>
               <td className='border border-[#929292] px-2'>{JenisSurat}</td>
               <td className='border border-[#929292] px-2'>{Tanggal}</td>
+              <td className='flex md:flex-row gap-2 w-fit flex-col text-center mx-auto my-2'>
+                  <Button type="ButtonTextIcon" className="bg-[#3a95be] items-center text-white " onClick={ActShow} icon={<BiShow />} text="Lihat" />
+                </td>
             </tr>  
 
           ) :(

@@ -31,8 +31,6 @@ const AddDataPenduduk = (props) => {
    }
   }
 
-
-
   return (
     <React.Fragment >
         

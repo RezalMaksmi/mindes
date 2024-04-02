@@ -32,7 +32,6 @@ const DashboardHomeUser = () => {
             <CardTable 
               key={i}
               No={i+1}
-              
               NamaPemohon={item.nama}
               JenisSurat={item.jenis_surat}
               Tanggal={item.tanggal}

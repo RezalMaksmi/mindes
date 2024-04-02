@@ -4,7 +4,6 @@ import { BiPlus, BiShow } from 'react-icons/bi'
 import { LuClock } from 'react-icons/lu'
 import { Button } from '../atoms'
 import { useNavigate } from "react-router-dom";
-import CardTable from './CardTable';
 
 const AduanUser = () => {
   const navigate = useNavigate();
