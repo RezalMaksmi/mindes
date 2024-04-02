@@ -19,6 +19,7 @@ import About from "./About";
 import Contact from "./Contact";
 import AduanAdmin from "./AduanAdmin";
 import AddAduanUser from "./AddAduanUser";
+import Footer from "./Footer";
 
 export {
   Navbar,
@@ -42,4 +43,5 @@ export {
   About,
   Contact,
   AddAduanUser,
+  Footer,
 };

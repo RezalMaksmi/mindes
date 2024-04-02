@@ -11,7 +11,7 @@ import {
 } from "./pages";
 
 import News from "./pages/News";
-import { AddAduanUser, AduanUser, Navbar } from "./components";
+import { AddAduanUser, AduanUser, Footer, Navbar } from "./components";
 
 function App() {
   const getUserDataFromLocalStorage = () => {
@@ -40,6 +40,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
       )}
+      <Footer />
     </BrowserRouter>
   );
 }

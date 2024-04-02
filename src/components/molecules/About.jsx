@@ -2,11 +2,10 @@ import React from "react";
 import vector from "../../assets/vector-about.png";
 import { LuCheckCircle } from "react-icons/lu";
 
-
 const About = () => {
   return (
-    <section className="bg-[#101A57] h-full" id="about" >
-      <div className="flex flex-col justify-center items-center text-center">
+    <section className="bg-[#101A57] h-full" id="about">
+      <div className="flex flex-col justify-center items-center text-center py-10">
         <h1 className="text-orange-500 text-[16px] md:text-[24px] font-medium">
           Tentang
         </h1>
@@ -15,7 +14,7 @@ const About = () => {
         </h2>
         <div className="container flex flex-col md:flex-row mx-24 gap-[100px] pt-14 ">
           <img
-            className="items-center mx-auto w-[300px] h-[200px] lg:w-[500px] lg:h-[300px] my-auto"
+            className="items-center mx-auto w-[300px] h-[200px] lg:w-[500px] lg:h-[300px] my-auto object-contain "
             src={vector}
             alt=""
           />
@@ -23,28 +22,24 @@ const About = () => {
             <div className="text-left text-[14px] lg:text-[20px] text-white flex flex-row lg:gap-5 gap-2 items-center justify-start">
               <LuCheckCircle className="max-w-10 w-full lg:h-10 h-7" />
               <span className="max-w-[800px] w-auto">
-                 MINDES adalah Pelayanan Administrasi Desa akan membuat pengguna
-              menikmati layanan administrasi 
-              pembuatan dokumen secara online yang Mempermudah Masyarakat dalam
-              pembuatan administrasi.
+                MINDES adalah Pelayanan Administrasi Desa akan membuat pengguna
+                menikmati layanan administrasi pembuatan dokumen secara online
+                yang Mempermudah Masyarakat dalam pembuatan administrasi.
               </span>
-             
             </div>
             <div className="text-left text-[14px] lg:text-[20px] text-white flex flex-row lg:gap-5 gap-2 items-center justify-start">
               <LuCheckCircle className="max-w-10 w-full lg:h-10 h-7" />
               <span className="max-w-[800px] w-auto">
                 Desa Mindes menghadirkan solusi efektifitas pelayanan masyarakat
-              menuju indonesia maju digital.
+                menuju indonesia maju digital.
               </span>
-              
             </div>
             <div className="text-left text-[14px] lg:text-[20px] text-white flex flex-row lg:gap-5 gap-2  justify-start items-center ">
               <LuCheckCircle className="max-w-10 w-full lg:h-10 h-7" />
               <span className="max-w-[800px] w-auto">
-                 Desa Mindes menghadirkan solusi efektifitas pelayanan masyarakat
-              menuju indonesia maju digital.
+                Desa Mindes menghadirkan solusi efektifitas pelayanan masyarakat
+                menuju indonesia maju digital.
               </span>
-             
             </div>
           </div>
         </div>
