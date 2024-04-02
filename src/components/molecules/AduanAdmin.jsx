@@ -23,9 +23,17 @@ const AduanAdmin = () => {
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
   };
-
+  const getUserDataFromLocalStorage = () => {
+    const user = localStorage.getItem("userData");
+    return user ? JSON.parse(user) : {};
+  };
+  const { token, role } = getUserDataFromLocalStorage();
   return (
-    <div className="pl-[80px] w-full h-auto  flex justify-center ">
+    <div
+      className={` ${
+        role === "user" && token ? "md:pl-[80px] pl-0" : "pl-[80px] "
+      } w-full h-auto  flex justify-center `}
+    >
       <div className="bg-[#fff] mx-auto  w-full h-auto scrollbar-thumb-white scrollbar-track-slate-300 ">
         {/* <ShowCard type="ShowData"  opens={openDetail} close={()=> setOpenDetail(false)} id="" /> */}
         <div className="w-auto h-[55px] px-10 pt-3 flex flex-row justify-between">
