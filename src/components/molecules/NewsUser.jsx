@@ -53,7 +53,10 @@ const newsData = [
 const NewsUser = () => {
   return (
     <div className="w-full h-full flex justify-center items-center my-5">
-      <div className="w-[180vh] h-full items-center flex justify-center bg-white rounded-lg">
+      <div className="w-[180vh] h-full items-center flex flex-col justify-center bg-white rounded-lg border-2">
+        <h1 className="font-bold text-[20px] md:text-[30px] text-center">
+          Berita Terbaru
+        </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-10 items-center lg:ml-20 object-contain ">
           {newsData.map((nws, index) => (
             <div
