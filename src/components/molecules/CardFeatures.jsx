@@ -27,7 +27,7 @@ const featuresData = [
 
 const CardFeatures = () => {
   return (
-    <section className="flex flex-col md:flex-row justify-center gap-5 items-center mx-auto lg:mx-[50px] my-10 px-3">
+    <section className="grid grid-cols-1 lg:grid-cols-[repeat(3,_300px)] gap-5 my-10 justify-center px-8">
       {featuresData.map((items, index) => (
         <Card
           key={index}
