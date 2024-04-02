@@ -17,7 +17,7 @@ const Login = () => {
     const handleLogin = () => {
     
         // Cek apakah data pengguna sesuai dengan data dummy json
-        const user = Users.find(user => user.kode === username && user.password === password && user.role === "user" && !username.includes('@') );
+        const user = Users.find(user => user.kode === username && user.password === password && user.role === "user" && !username.includes('@'));
         const admin = Users.find(user => user.email === email && user.password === passwordAdmin && user.role === "admin" );
     
         if (user) {
@@ -59,9 +59,9 @@ const Login = () => {
 
       }
   return (
-    <div className={`w-full min-h-screen h-auto flex justify-center flex-col   `}>
-    <div className={`container mx-auto flex flex-col-reverse lg:flex-row relative justify-between items-center lg:px-[70px] w-full `}>
-    <div className={`card ${openAdmin ? 'front' : 'back'} ${daftar ? 'mt-32' : 'mt-0'}  mt-6 flex flex-col bg-[#fff] border-2 bg-opacity-50 rounded-[14px] px-[46px] py-[46px] max-w-[660px] w-full`}>
+    <div className={`w-full min-h-screen h-auto flex justify-center flex-col overflow-hidden  `}>
+    <div className={`container mx-auto flex flex-col-reverse lg:flex-row relative justify-between items-center lg:px-[70px] w-full h-full px-3`}>
+    <div className={`card ${openAdmin ? 'front' : 'back'} ${daftar ? 'mt-32' : 'mt-0'} z-20 mt-6 flex flex-col bg-[#fff] bg-opacity-20 backdrop-blur-lg border-2 rounded-[14px] lg:px-[46px] px-3 py-[46px] max-w-[660px] w-full`}>
    {
     !openAdmin ? (
        <>
@@ -228,7 +228,7 @@ const Login = () => {
         )
     }  
             </div>
-            <div className={`w-full h-[700px] relative z-0 `}>
+            <div className={`w-full h-[700px] lg:relative z-0  absolute lg:bottom-0 lg:right-0 bottom-[-200px] right-[-40px]`}>
               <Images type="vektor1" className="absolute h-[100%] z-30"/>
             </div>
         </div>
