@@ -48,8 +48,10 @@ const AddAjuanUser = () => {
   switch (tipe.name) {
     case "Keterangan Penduduk":
       return (
-        <div className="p-4 border mx-24 my-6 rounded-md">
-          <h1 className="font-bold text-4xl">Buat Pengajuan Surat {tipe.name}</h1>
+        <div className="p-4 border md:mx-24 mx-3 my-6 rounded-md">
+          <h1 className="font-bold md:text-4xl text-2xl">
+            Buat Pengajuan Surat {tipe.name}
+          </h1>
           <form
             onSubmit={(e) => e.preventDefault()}
             className="py-6 grid gap-2"
@@ -114,8 +116,10 @@ const AddAjuanUser = () => {
 
     case "Pengantar Pembuatan KTP":
       return (
-        <div className="p-4 border mx-24 my-6 rounded-md">
-          <h1 className="font-bold text-4xl">Buat Pengajuan {tipe.name}</h1>
+        <div className="p-4 border md:mx-24 mx-3 my-6 rounded-md">
+          <h1 className="font-bold md:text-4xl text-2xl">
+            Buat Pengajuan {tipe.name}
+          </h1>
           <form
             onSubmit={(e) => e.preventDefault()}
             className="py-6 grid gap-2"
@@ -175,8 +179,10 @@ const AddAjuanUser = () => {
 
     case "Pengantar SKCK":
       return (
-        <div className="p-4 border mx-24 my-6 rounded-md">
-          <h1 className="font-bold text-4xl">Buat Pengajuan Surat {tipe.name}</h1>
+        <div className="p-4 border md:mx-24 mx-3 my-6 rounded-md">
+          <h1 className="font-bold md:text-4xl text-2xl">
+            Buat Pengajuan Surat {tipe.name}
+          </h1>
           <form
             onSubmit={(e) => e.preventDefault()}
             className="py-6 grid gap-2"
@@ -241,8 +247,10 @@ const AddAjuanUser = () => {
 
     case "Keterangan Kematian":
       return (
-        <div className="p-4 border mx-24 my-6 rounded-md">
-          <h1 className="font-bold text-4xl">Buat Pengajuan Surat {tipe.name}</h1>
+        <div className="p-4 border md:mx-24 mx-3 my-6 rounded-md">
+          <h1 className="font-bold md:text-4xl text-2xl">
+            Buat Pengajuan Surat {tipe.name}
+          </h1>
           <form
             onSubmit={(e) => e.preventDefault()}
             className="py-6 grid gap-2"
@@ -328,8 +336,10 @@ const AddAjuanUser = () => {
       );
     case "Keterangan Ahli Waris":
       return (
-        <div className="p-4 border mx-24 my-6 rounded-md">
-          <h1 className="font-bold text-4xl">Buat Pengajuan Surat {tipe.name}</h1>
+        <div className="p-4 border md:mx-24 mx-3 my-6 rounded-md">
+          <h1 className="font-bold md:text-4xl text-2xl">
+            Buat Pengajuan Surat {tipe.name}
+          </h1>
           <form
             onSubmit={(e) => e.preventDefault()}
             className="py-6 grid gap-2"
@@ -393,8 +403,10 @@ const AddAjuanUser = () => {
       );
     case "Keterangan Tidak Mampu":
       return (
-        <div className="p-4 border mx-24 my-6 rounded-md">
-          <h1 className="font-bold text-4xl">Buat Pengajuan Surat {tipe.name}</h1>
+        <div className="p-4 border md:mx-24 mx-3 my-6 rounded-md">
+          <h1 className="font-bold md:text-4xl text-2xl">
+            Buat Pengajuan Surat {tipe.name}
+          </h1>
           <form
             onSubmit={(e) => e.preventDefault()}
             className="py-6 grid gap-2"

@@ -14,32 +14,32 @@ const DashboardPengajuanUser = () => {
     {
       title: "Keterangan Penduduk",
       img: keteranganPenduduk,
-      link: "/ajuan/",
+      link: "/ajuan/tambah?tipe=keterangan-penduduk",
     },
     {
       title: "Pengantar Pembuatan KTP",
       img: pembuatanKTP,
-      link: "/ajuan/",
+      link: "/ajuan/tambah?tipe=pengantar-pembuatan-ktp",
     },
     {
       title: "Pengantar SKCK",
       img: pengantarSKCK,
-      link: "/ajuan/",
+      link: "/ajuan/tambah?tipe=pengantar-skck",
     },
     {
       title: "Keterangan Kematian",
       img: keteranganKematian,
-      link: "/ajuan/",
+      link: "/ajuan/tambah?tipe=keterangan-kematian",
     },
     {
       title: "Keterangan Ahli Waris",
       img: keteranganAhliWaris,
-      link: "/ajuan/",
+      link: "/ajuan/tambah?tipe=keterangan-ahli-waris",
     },
     {
       title: "Keterangan tidak mampu",
       img: keteranganTidakMampu,
-      link: "/ajuan/",
+      link: "/ajuan/tambah?tipe=keterangan-tidak-mampu",
     },
   ];
 
