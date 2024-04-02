@@ -41,14 +41,15 @@ const dataProfile = [
 
 const Team = () => {
   return (
-    <section className="h-full mb-10 flex flex-col justify-center ">
+    <section className="h-full pb-20 flex flex-col justify-center items-center bg-[#fff]">
       <Text  type="subtitle" text="Team" />
 
-      <div className="container items-center mx-auto">
+      <div className="container items-center px-3">
         <Swiper
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
+            
           }}
           pagination={{
             clickable: true,
@@ -60,24 +61,24 @@ const Team = () => {
           breakpoints={{
             640: {
               slidesPerView: 2,
-              spaceBetween: 20,
+              spaceBetween: 10,
             },
             768: {
               slidesPerView: 3,
-              spaceBetween: 30,
+              spaceBetween: 10,
             },
             1024: {
               slidesPerView: 5,
-              spaceBetween: 50,
+              spaceBetween: 10,
             },
             1280: {
               slidesPerView: 5,
-              spaceBetween: 60,
+              spaceBetween: 10,
             },
           }}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
-          className="mySwiper">
+          className="mySwiper ">
           {dataProfile.map((prf, index) => (
             <SwiperSlide key={index}>
               <CardProfile image={prf.image} name={prf.name} role={prf.role} />

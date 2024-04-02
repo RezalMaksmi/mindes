@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Users } from "../data";
 import { Input } from '../components';
 import Images from '../assets/img/Images';
-import { BiKey, BiRightArrow, BiRightArrowAlt, BiUserCircle } from 'react-icons/bi';
+import { BiKey, BiRightArrowAlt, BiUserCircle } from 'react-icons/bi';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
@@ -22,7 +22,6 @@ const Login = () => {
     
         if (user) {
           // Autentikasi berhasil
-          // && !username.includes('@')
           setError('');
             const token = user.token;
             const name = user.username;

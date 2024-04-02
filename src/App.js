@@ -24,7 +24,7 @@ function App() {
     <BrowserRouter>
       <Navbar />
 
-      {token ? (
+      {token && role ? (
         <Routes>
           <Route path="/" element={<DashboardUser />} />
           <Route path="/ajuan" element={<Pengajuan />} />

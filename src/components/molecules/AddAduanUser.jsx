@@ -29,7 +29,7 @@ const AddAduanUser = () => {
     setDragging(false);
     const file = e.dataTransfer.files[0];
     console.log('File dropped:', file);
-    // Do something with the dropped file, e.g., upload it
+    
   };
 
   const handleFileSelect = (e) => {

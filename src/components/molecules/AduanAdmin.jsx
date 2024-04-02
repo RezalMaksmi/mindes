@@ -67,14 +67,13 @@ const AduanAdmin = () => {
                 {
                   currentPageData.map((item, i) => {
                     return (
-                    <CardTable 
-                    key={i}
+                      <CardTable 
+                        key={i}
                         No={i+1}
                         NomorSurat={item.nomor}
                         NamaPemohon={item.nama}
                         JenisSurat={item.jenis_surat}
                         Tanggal={item.tanggal}
-                        ActShow=""
                         type="Arsip"
                     />);
                   })

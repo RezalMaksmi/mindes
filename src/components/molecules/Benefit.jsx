@@ -5,7 +5,7 @@ import { Text } from "../atoms";
 
 const Benefit = () => {
   return (
-    <section className="h-fit bg-[#E0E9EF]">
+    <section className="h-fit py-4 bg-[#E0E9EF]">
       <Text type="subtitle" text="Benefit" />
       <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-10 ">
         <img
