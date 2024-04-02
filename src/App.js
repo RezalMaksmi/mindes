@@ -14,6 +14,7 @@ import News from "./pages/News";
 import { AddAduanUser, AddAjuanUser, AduanUser, Footer, Navbar } from "./components";
 import NewsDetailsUser from "./components/molecules/NewsDetailsUser";
 
+
 function App() {
   const getUserDataFromLocalStorage = () => {
     const user = localStorage.getItem("userData");
@@ -24,7 +25,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-
+      
       {token && role ? (
         <Routes>
           <Route path="/" element={<DashboardUser />} />

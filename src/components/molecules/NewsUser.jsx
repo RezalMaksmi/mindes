@@ -52,13 +52,13 @@ const newsData = [
 
 const NewsUser = () => {
   return (
-    <div className="w-full h-full flex justify-center items-center">
-      <div className="w-[180vh] h-full items-center mx-auto flex justify-center bg-white border-2 rounded-lg">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-10 mx-24 items-center lg:mx-16 object-contain ">
+    <div className="w-full h-full flex justify-center items-center my-5">
+      <div className="w-[180vh] h-full items-center flex justify-center bg-white rounded-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-10 items-center lg:ml-20 object-contain ">
           {newsData.map((nws, index) => (
             <div
               key={index}
-              className="mx-auto my-5 w-[200px] md:w-[300px] lg:w-[400px] xl:h-[471px] p-4 hover:scale-105 transition-all cursor-pointer shadow-md">
+              className="mx-auto w-full md:w-[300px] lg:w-[400px] xl:h-[471px] p-4 hover:scale-105 transition-all cursor-pointer shadow-md">
               <Link to="/news/details">
                 <img className="object-cover" src={nws.image} alt="" />
               </Link>

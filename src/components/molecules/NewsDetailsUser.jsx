@@ -4,7 +4,7 @@ import news from "../../assets/news.png";
 const NewsDetailsUser = () => {
   return (
     <section className="">
-      <div className="flex flex-col w-fit justify-center items-center ml-24 my-10 border-2 h-full p-2 rounded-md">
+      <div className="flex flex-col w-fit justify-center items-center md:ml-24 my-10 border-2 h-full p-2 rounded-md">
         <img
           className="object-cover w-full max-w-full max-h-[500px] rounded-md"
           src={news}
