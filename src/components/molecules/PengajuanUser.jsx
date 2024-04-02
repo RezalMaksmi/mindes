@@ -44,11 +44,19 @@ const DashboardPengajuanUser = () => {
   ];
 
   return (
-    <div className={"px-32 py-8"}>
-      <h1 className={"text-6xl font-bold mb-4"}>Pengajuan Surat</h1>
-      <h2 className="text-2xl mb-4">Pilih surat yang ingin kamu ajukan</h2>
+    <div className={"md:px-32 px-5 py-8"}>
+      <h1 className={"md:text-5xl text-2xl font-bold md:mb-4 mb-1"}>
+        Pengajuan Surat
+      </h1>
+      <h2 className="md:text-2xl text-base mb-4">
+        Pilih surat yang ingin kamu ajukan
+      </h2>
 
-      <div className={"grid grid-cols-2 xl:grid-cols-3 justify-between gap-16"}>
+      <div
+        className={
+          "grid grid-cols-1 sm:grid-cols-2  justify-between md:gap-16 gap-5"
+        }
+      >
         {pengajuanCardData.map((item, index) => (
           <Card
             key={index}
